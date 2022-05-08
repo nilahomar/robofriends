@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 import './App.css';
+import Scroll from './components/Scroll.js/Scroll';
 
 const App = () => {
   const [searchField, setSearchField] = useState('');
@@ -37,7 +38,9 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder='search monsters'
       />
-      <CardList monsters={filteredMonsters} />
+      <Scroll>
+        <CardList monsters={filteredMonsters} />
+      </Scroll>
     </div>
   );
 };
